@@ -1,9 +1,9 @@
 import java.util.ArrayList;
 public class Painting3{
     public static void main(String[] args){
-        Canvas c=new Canvas(21,18,'.');
-        c.addShape(new Circle(10,9,71,'#'));
-        c.addShape(new Rectangle(12,3,7,4,'o'));
+        Canvas c=new Canvas(22,18,'.');
+        c.addShape(new Circle(10,9,8,'#'));
+        c.addShape(new Rectangle(13,3,7,4,'o'));
         c.addShape(new Rectangle(1,15,2,3,'x'));
         c.drawAll();
         c.dump();
@@ -61,7 +61,7 @@ class Circle implements Shape{
     public void draw(char arr[][]){
         for(int row=0;row<arr.length;row++){
             for (int col=0;col<arr[0].length;col++){
-                if ((row-ry)*(row-ry)+(col-rx)*(col-rx)<=radius){
+                if ((row-ry)*(row-ry)+(col-rx)*(col-rx)<=radius*radius){
                     arr[row][col]=c;
                 }
             }

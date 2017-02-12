@@ -1,14 +1,13 @@
 import java.lang.Math;
+import java.util.ArrayList;
 public class Shape3{
     public static void main(String []args){
-        Shape c = new Circle(10);
-        Shape r = new Rectangle(10, 5);
-        Shape r2 = new Rectangle(20, 3);
-        Shape t = new Triangle(10, 5);
-        c.printArea();
-        r.printArea();
-        r2.printArea();
-        t.printArea();
+        Canvas c=new Canvas();
+        c.addShape(new Circle(10));
+        c.addShape(new Rectangle(10, 5));
+        c.addShape(new Rectangle(20, 3));
+        c.addShape(new Triangle(10, 5));
+        c.areaSum();
     }
 }
 
@@ -20,6 +19,23 @@ interface Shape{
 abstract class BaseShape implements Shape{
     public void printArea(){
         System.out.println(area());
+    }
+}
+
+class Canvas{
+    private ArrayList<Shape> shapes= new ArrayList<Shape>();
+    double area=0;
+    public Canvas() {
+        System.out.println("Canvas created.");
+    }
+    public void addShape(Shape shape){
+        shapes.add(shape);
+    }
+    public void areaSum(){
+        for (int i=0;i<shapes.size();i++){
+            area+=shapes.get(i).area();
+        }
+        System.out.println(area);
     }
 }
 
