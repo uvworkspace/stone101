@@ -6,8 +6,6 @@ public class BetterBinary{
         Scanner sc = new Scanner(System.in);
         int num = sc.nextInt();
         string(num);
-        int num2 = sc.nextInt();
-        arr(num2);
     }
     public static void arr(int n ){
         ArrayList<Integer> bin=new ArrayList<Integer>();
@@ -26,6 +24,7 @@ public class BetterBinary{
         int temp=0;
         while(n>0){
             bin1=n%2+bin1;
+            System.out.println(bin1);
             n/=2;
         }
         System.out.println(bin1);

@@ -6,7 +6,7 @@ int main(){
     int num, input, i=0, j=0;
     int** arr = new int*[num] ;
     for ( int n=0 ; n < num ; ++i ){
-        arr[i] = new int[4];
+        arr[i] = new int[5];
     }
     while (cin >> num ){
             while (cin >> input && i < num){
