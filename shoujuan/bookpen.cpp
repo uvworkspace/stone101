@@ -1,8 +1,18 @@
-#include <iostream>
-using namespace std;
-int main()
+#include<iostream>
+using std::cout;
+using std::endl;
+using std::cin;
+int main ()
 {
-cout <<"That is a pen.\n";  
-cout << "I am a student." << endl;  
-return 0;  
+    char string1[20];
+    char string2[]="string literal";
+    
+    cin>> string1;
+        cout<<"string1 is: "<<string1;
+        cin>>string1;
+        cout<<string1<<endl;
+        cin>>string1;
+        cout<<"\nstring1 is: "<<string1<<endl;
+        
+    return 0;
 }

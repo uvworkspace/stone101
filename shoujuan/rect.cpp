@@ -1,10 +1,25 @@
-// c++
 #include <iostream>
-#include <string>
 using namespace std;
-
-int cnt = 0;
-string log(string s) {
-  ++cnt;
-  return to_string(cnt) + " " + s; 
+void printCake(int base){
+  cout<<"*"<<endl;
+  if (base<2){
+    return;
+  }
+  for (int i=0;i<base-2;i++){
+    cout<<"*";
+    for (int j=0;j<i;j++){
+      cout<<"-";
+    }
+    cout<<"*"<<endl;
+  }
+  for (int i=0;i<base;i++){
+    cout<<"*";
+  }
+  cout<<endl;
+}
+int main() {
+  int n;
+  while (std::cin >> n) {
+    printCake(n);
+  }
 }
