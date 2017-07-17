@@ -1,20 +1,36 @@
 #include <iostream>  
 #include <string>  
-#include <math.h>  
-#include <algorithm>
-#include <vector>
+#include <math.h>
 using namespace std;
 
+int smaller(int a[],int n,int len) {
+  int s=a[n];
+  int s_p=n;
+  for (int i=n+1;i<len;++i) {
+    if (a[i]<s) {
+      s=a[i];
+      s_p=i;
+    }
+  }
+  return s_p;
+}
+
+void exchange(int a[],int c_1,int c_2) {
+  int aaa=a[c_1];
+  a[c_1]=a[c_2];
+  a[c_2]=aaa;
+}
+
 int main () {
-  vector<int> nums;
-  int N,k[N];
+  int N,a[100];
   cin >> N;
   for (int i=0;i<N;++i) {
-    cin >> k[i];
-    nums.push_back(k[i]);
+    cin >> a[i];
   }
-  sort(nums.begin(), nums.end());
-  for(int j=nums.size()-1;j>=0;--j) {
-    cout << nums[j] << " ";
+  for (int j=0;j<N;++j) {
+    exchange(a,smaller(a,j,N),j);
+  }
+  for (int k=N-1;k>=0;--k) {
+    cout << a[k] << " ";
   }
 }
