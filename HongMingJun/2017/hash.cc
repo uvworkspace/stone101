@@ -41,23 +41,33 @@ void uniq3(vector<int>& arr){
   }
   cout<<endl;
 }
-bool find2(int arr[],int len,int ch){
-  for(int i=0;i<len;i++){
+bool find2(int arr[],int len,int ch, int start){
+  for(int i=start;i<len;i++){
     if(arr[i]==ch) return 1;
   }
   return 0;
 }
 void uniq4(int arr[],int len){
   for(int i=0;i<len;i++){
-    if(!find2(arr,len,arr[i])) cout<<arr[i]<<" ";
+    if(!find2(arr,len,arr[i], i+1)) cout<<arr[i]<<" ";
+  }
+  cout<<endl;
+}
+void uniq5(int arr[],int len){
+  sort(arr,arr+len );
+  for(int i=0;i<len;i++){
+    if(i==0) cout<<arr[i];
+    else if(arr[i-1]!=arr[i]) cout<<" "<<arr[i];
   }
   cout<<endl;
 }
 int main(){
   vector<int> s={1,1,23,443,4,5,4,23,44,5};
+  int arr[10]={1,1,23,443,4,5,4,23,44,5};
   uniq1(s);
   uniq2(s);
   uniq3(s);
+  uniq5(arr,10);
   int len=0;
   int x;
   while(cin>>x){

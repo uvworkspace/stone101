@@ -1,28 +1,22 @@
 #include <iostream>
-#include <map>
-#include <algorithm> 
+#include <vector>
 using namespace std;
 
 int main ()
 {
-  std::map<char,int> cnts;
+  vector<int> arr;
 
-  cnts['a']=10;
-  cnts['x']=30;
-  cout << "a: " << cnts['a'] << endl;
-  cout << "x: " << cnts['x'] << endl;
-  cout << "b: " << cnts['b'] << endl;
-  cnts['c']++;
-  cout << "c: " << cnts['c'] << endl;
+  cout << "sz: " << arr.size() << endl;
+  arr.push_back(123);
+  cout << "arr[0]: " << arr[0] << " sz: " << arr.size() << endl;
   
   vector<int> arr2 = {3, 1, 4, 1, 6};
+
   for (int n : arr2) {
-    cout << n << ",";
+    cout << n << endl;
   }
-  cout << endl;
-  sort(arr2.begin(), arr2.end());
-  for (int n : arr2) {
-    cout << n << ",";
+
+  for (int i=0; i<arr2.size(); i++) {
+    cout << i << ": " << arr2[i] << endl;
   }
-  cout << endl;
 }

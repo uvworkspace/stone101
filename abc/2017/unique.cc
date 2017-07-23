@@ -68,8 +68,7 @@ void pr(vector<int>& v) {
   }
   cout << endl;
 }
-int arr[1000];
-int len=0;
+
 
 bool notinto(int x, int arr[],int len){
   for(int n=0;n<len;n++){
@@ -87,36 +86,45 @@ void pr2(int a[], int len) {
   cout << endl;
 }
 int uniq4(int arr[],int len){
-  int arr1[1000];
-  int len1=0
-  for(int n=0;n<len;n++){
-    if (notinto(arr[n],arr1[],len1)){
-      arr1[len]=arr[n];
-      len++;
+  int arr1[len];
+  int len1=1;
+  arr1[0]=arr[0];
+  for(int n=1;n<len;n++){
+    if (notinto(arr[n],arr1,len1)){
+      arr1[len1]=arr[n];
+      len1++;
     }
-    pr2(arr1,len1);
   }
-  for(int n:c){
-    cout<<n <<" ";
-  }
-  cout<<endl;
-
+  pr2(arr1,len1);
 }
 
+int uniq5(int arr[],int len){
+  sort(arr, arr+len);
+  cout <<arr[0]<<" ";
+  for (int q=1;q <len;q++){
+    if (arr[q]!=arr[q-1]){
+      cout<<arr[q]<<" ";
+    }
+  }
+  cout<<endl;
+}
 
 int main(){
+  int arr[1000];
+  int len=0;
   vector<int>a={5,9,3,52,3,5};
   pr(a);
-  uniq1(a);
-  pr(a);
-  uniq2a(a);
-  pr(a);
-  uniq3(a);
-  pr(a);
-  int x
+  //uniq1(a);
+  //pr(a);
+  //uniq2a(a);
+  //pr(a);
+  //uniq3(a);
+  //pr(a);
+  int x;
   while (cin >> x) {
     arr[len] = x;
     len++;
   }
-  uniq4(arr[],len)
+  uniq4(arr,len);
+  uniq5(arr,len);
 }

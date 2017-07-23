@@ -37,12 +37,13 @@ int uniq1 (vector <int> nums) {
 }
 
 int uniq2(vector <int> nums) {
-  vector<int> b={nums[0]};
+  vector<int> b;
   vector<int> c=nums;
   sort(c.begin(),c.end());
+  b.push_back(c[0]);
   for (int i=1;i<c.size()-1;++i) {
     if (c[i-1]!=c[i]) {
-      b.push_back(nums[i]);
+      b.push_back(c[i]);
     }
   }
   for (int j:b) {
@@ -72,7 +73,7 @@ void pr(int a[],int len) {
   cout << endl;
 }
 int uniq4(int a[],int len_a) {
-  int b[10000];
+  int b[len_a];
   int len_b=1;
   b[0]=a[0];
   for(int i=1;i<len_a;++i) {
@@ -83,11 +84,28 @@ int uniq4(int a[],int len_a) {
   }
   pr(b,len_b);
 }
+
+int uniq5(int a[],int len) {
+  int b[len];
+  int len_b=1;
+  int *s=a;
+  sort(s,s+len);
+  b[0]=s[0];
+  for (int i=1;i<len;++i) {
+    if (s[i-1]!=s[i]) {
+      b[len_b]=s[i];
+      len_b++;
+    }
+  }
+  pr(b,len_b);
+}
+
 int main () {
   vector<int> nums={3,1,2,3,5,4,5};
   uniq1(nums);
   uniq2(nums);
   uniq3(nums);
-  int arr[7]={3,1,2,3,5,4,5};
+  int arr[7] ={3,1,2,3,5,4,5};
   uniq4(arr,7);
+  uniq5(arr,7);
 }
