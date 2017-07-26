@@ -1,0 +1,11 @@
+def hi(name):
+  print("Hello World", name)
+
+if _name_ == "_main_":
+  hi("Sean)
+
+:wq!
+
+
+
+
