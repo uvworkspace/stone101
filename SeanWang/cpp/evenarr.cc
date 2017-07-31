@@ -2,14 +2,14 @@
 #include <vector>
 using namespace std;
 
-int collectEven(int arr[], int out[], int label)
+int collectEven(int arr[], int len, int out[], int label, int max)
 {
-  int len = sizeof(arr) / sizeof(int);
-  for (int i = 0; i < len; i++)
+  for (int i = 0; i < len and i < max; i++)
   {
     if (arr[i] % 2 == 0)
     {
-      out[i + label] = arr[i];
+      
+      out[label] = arr[i];
       label++;
     }
   }
@@ -17,12 +17,22 @@ int collectEven(int arr[], int out[], int label)
 }
 
 
+
 int main()
 {
+  int label = 0;
+  int max = 100;
   int arr[] = {4, 4, 1, 15, 12 ,17 ,66, 23};
-  int out[100];
-  collectEven(arr[], out[]);
+  int len = sizeof(arr) / sizeof(arr[0]);
+  int out[max];
+  label = collectEven(arr, len, out, label, max);
   
   int arr2[] = {5, 1, 14, 19, 22, 60};
-  collectEven(int );
+  int len2 = sizeof(arr2) / sizeof(arr2[0]);
+  label = collectEven(arr2, len2, out, label, max);
+  
+  for (int i = 0; i < label; i++)
+  {
+    cout << out[i] << ", ";
+  }
 }

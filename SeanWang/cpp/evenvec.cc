@@ -16,8 +16,28 @@ int collectEven(vector<int>& arr, vector<int>& out)
   return cnt;
 }
 
-
-int main()
+int main() {
+  int n;
+  vector<int> v;
+  int arr[100];
+  int len = 0;
+  
+  while (cin >> n) {
+    v.push_back(n);
+    arr[len++] = n;
+  }
+  
+  vector<int> out;
+  collect1(v, out);
+  
+  int aout[100];
+  int olen = 0;
+  collect2(arr, len, aout, olen, 100)
+  
+  
+  
+}
+int main0()
 {
   vector<int> arr({3, 4, 1, 2, 53, 3, 34, 5});
   vector <int> out;
@@ -33,7 +53,7 @@ int main()
   collectEven(arr, out);
   
   cout << "vec: " << n << ": ";
-  for (int i = 0; i < out.size(); i++)
+  for (int i = 0, n = out.size(); i < n; i++)
   {
     cout << out[i] << ", ";
   }

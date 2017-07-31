@@ -13,8 +13,10 @@ int main () {
   int max=0;
   int aaa=0;
   for (int j=0;j<n;++j) {
-    aaa=aaa+aa[j];
-    if (max<aaa){
+    aaa+=aa[j];
+    if (aaa<0) {
+      aaa=0;
+    } else if (aaa>0 and max<aaa) {
       max=aaa;
     }
   }

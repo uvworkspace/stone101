@@ -3,10 +3,9 @@ using namespace std;
 
 string VOWELS = "aeiou";
 bool isVowel(char c) {
-  bool vowel;
   for (int i=0; i<VOWELS.length(); i++) {
-    if (c = 'a' || 'e' || 'i' || 'o' || 'u') {
-      vowel = true;
+    if (c == VOWELS[i]) {
+      return true;
     }
   }
   return 0;
@@ -15,12 +14,11 @@ bool isVowel(char c) {
 int findVowel(string s) {
   int count = 0;
   for (int i = 0; i < s.length(); i++) {
-    if (isVowel(s[i]) = true) {
+    if (isVowel(s[i]) == true) {
       count++;
     }
   }
   return count;
-  return 0;
 }
 
 int main() {
@@ -31,6 +29,6 @@ int main() {
   cout << nVowels << endl; // should print 5
   
   string s2 = "stone";
-  nVowels = findVowel(s1);
+  nVowels = findVowel(s2);
   cout << nVowels << endl; // should print 2
 }
