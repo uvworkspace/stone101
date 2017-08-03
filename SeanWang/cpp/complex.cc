@@ -2,10 +2,10 @@
 using namespace std; 
 
 class Complex {
-//private:
+private:
   double real;
   double imag;
-//public:
+public:
   //Complex(double reals, double imags): real(reals), imag(imags) {}
   Complex(double reals, double imags){
     this -> real = reals;

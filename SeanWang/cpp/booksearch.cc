@@ -65,7 +65,7 @@ int main ()
   cin >> num;
   for (int i = 0; i < num; i++)
   {
-    struct Book abook;
+    Book abook;
     cin >> abook.id >> abook.title >> abook.price >> abook.page;
     books.push_back(abook);
   }

@@ -48,7 +48,11 @@ void uniqsort(vector <string> strvec) {
   }
 }
 
-void 
+void uniqmap(map <string, int>& cnts) {
+    for (auto& pair : cnts) {
+      cout << "[" << pair.first << "]: " << pair.second << endl;
+    }
+}
 
 /*int main() {
   vector <string> strvec ({"sean", "lol", "sean", "hi", "hi", "lol"});
@@ -57,12 +61,9 @@ void
 
 int main() {
   map <string,int> cnts;
-  cnts["abc"]=10;
-  cnts["def"]=30;
-  int cnt = cnts.count("yyy");
-  cout << "yyy: " << (cnt > 0 ? cnts["yyy"] : 0) << endl;
-
-  for(auto& pair : cnts) {
-    cout << "[" << pair.first << "] " << pair.second << endl;
+  string text;
+  while (cin >> text) {
+    cnts[text]++;;
   }
+  uniqmap(cnts);
 }

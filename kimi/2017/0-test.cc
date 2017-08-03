@@ -2,14 +2,9 @@
 #include <string>  
 #include <math.h> 
 #include <map>
+#include <algorithm>
 using namespace std;
 
 int main () {
-  char nums[100];
-  for (int i=0;i<20;++i) {
-    nums[i]=4;
-  }
-  for (int j=0;j<20;++j) {
-    cout << nums[j]+'0' << " ";
-  }
+  cout << sizeof(int [100][100]) << endl;
 }
