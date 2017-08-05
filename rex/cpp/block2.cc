@@ -29,11 +29,11 @@ class Line{
     void println(){
       cout<<s<<endl;
     }
-    void append(unique_ptr<Line> ln){
-      s+=ln->text();
+    void append(Line &ln){
+      s+= ln.text();
     }
     ~Line(){
-      cout<<"deleted"<<endl;
+      cout<<s<<" deleted"<<endl;
     }
       
 };
@@ -64,17 +64,18 @@ class Block{
 
 int main(){
   unique_ptr<Line> line1(new Line(10,'*'));
-  /*unique_ptr<Line> line2(new Line(1,'*'));
-  unique_ptr<Line> line3(new Line(8,' '));
-  unique_ptr<Line> line4(new Line(1,'*'));
-  line2->append(line3);
-  line2->append(line4);*/
+ 
   Block block(4);
-  /*block.addLine(move(line1));
+  block.addLine(move(line1));
   for (int i =0;i<6;i++){
+    unique_ptr<Line> line2(new Line(1,'*'));
+    Line line3(8,' ');
+    Line line4(1,'*');
+    line2->append(line3);
+    line2->append(line4);
     block.addLine(move(line2));
   }
-  
-  block.addLine((line1));*/
+  unique_ptr<Line> lineend(new Line(10,'*'));
+  block.addLine(move(lineend));
   block.print(4);
 }

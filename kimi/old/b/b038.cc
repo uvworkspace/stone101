@@ -4,44 +4,27 @@
 #include <algorithm>
 using namespace std;
 
-bool OK(int arr[],int len) {
-  int aa=0,aa1=1,t1=0,t2=1;
-  for (int i=0;i<len;++i) {
-    aa+=arr[i];
-    aa1*=arr[i];
-    t1+=i;
-    t2*=i;
-  }
-  if (aa==t1 and aa1==t2) {
-    return true;
-  }
-  return false;
-}
-int next(int arr[],int len,int max) {
-  int now=len-1;
-  while (arr[now]==max) {
-    arr[now]=1;
-    now-=1;
-    if (now<0) {
-      return 0;
+int solution[8];
+bool used[8]={false};
+
+void backtrack(int n,int j) {
+    if (n == j) {
+        for (int i=0; i<j; i++)
+            cout << solution[i]+1;
+        cout << endl;
+        return;
     }
-  }
-  arr[now]+=1;
-  if (OK(arr,len)) {
-    for (int i=0;i<len;++i) {
-      cout << arr[i];
+    for (int i=0; i<j; i++) {
+        if (!used[i]) {
+            used[i] = true;
+            solution[n] = i;
+            backtrack(n+1,j);
+            used[i] = false;
+        }
     }
-    cout << endl;
-  }
-  next(arr,len,max);
 }
 int main () {
-  int m,n;
+  int n;
   cin >> n;
-  int aa[n];
-  for (int i=0;i<n;++i) {
-    aa[i]=1;
-  }
-  cout << endl;
-  next(aa,n,n);
+  backtrack(0,n);
 }

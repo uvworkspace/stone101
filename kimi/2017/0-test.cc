@@ -1,10 +1,10 @@
 #include <iostream>  
 #include <string>  
-#include <math.h> 
-#include <map>
+#include <math.h>  
 #include <algorithm>
 using namespace std;
 
 int main () {
-  cout << sizeof(int [100][100]) << endl;
+  long long int a=2000000000;
+  cout << a << endl;
 }

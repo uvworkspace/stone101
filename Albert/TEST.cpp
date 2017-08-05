@@ -1,9 +1,9 @@
-bool check()
-{
-  cout << 5 < 5 << endl;
-}
+#include <iostream>
+using namespace std;
 
 int main()
 {
-  check();
+  for (int i=0; i<10; i++) 
+    cout << "Hello" << endl;
+    cout << "World" << endl;
 }
